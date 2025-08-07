@@ -11,7 +11,8 @@ public class UserMapper {
                 user.getName(),
                 user.getAge(),
                 user.getCpf(),
-                user.getEmail());
+                user.getEmail(),
+                user.getStatus());
     }
 
     public static User toUser(UserRequestDTO userRequestDTO) {
@@ -19,6 +20,8 @@ public class UserMapper {
                 userRequestDTO.getAge(),
                 userRequestDTO.getCpf(),
                 userRequestDTO.getEmail(),
-                userRequestDTO.getPassword());
+                userRequestDTO.getPassword(),
+                userRequestDTO.getStatus());
     }
+
 }

@@ -30,6 +30,9 @@ public class User {
     @Column(name = "tu_senha", nullable = false, unique = true)
     private String password;
 
+    @Column(name = "tu_status", nullable = false)
+    private UserStatus status;
+
     public User() {
     }
 
@@ -39,6 +42,16 @@ public class User {
         this.cpf = cpf;
         this.email = email;
         this.password = password;
+        this.status = UserStatus.ACTIVE;
+    }
+
+    public User(String name, Integer age, String cpf, String email, String password, UserStatus status) {
+        this.name = name;
+        this.age = age;
+        this.cpf = cpf;
+        this.email = email;
+        this.password = password;
+        this.status = status;
     }
 
     public Integer getId() {
@@ -83,5 +96,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(UserStatus status) {
+        this.status = status;
     }
 }

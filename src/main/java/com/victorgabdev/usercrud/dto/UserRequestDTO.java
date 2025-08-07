@@ -1,6 +1,7 @@
 package com.victorgabdev.usercrud.dto;
 
 
+import com.victorgabdev.usercrud.entities.UserStatus;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -23,54 +24,41 @@ public class UserRequestDTO {
     @Size(min = 6)
     private String password;
 
+    private UserStatus status;
+
     public UserRequestDTO() {
     }
 
-    public UserRequestDTO(String name, Integer age, String cpf, String email, String password) {
+    public UserRequestDTO(String name, Integer age, String cpf, String email, String password, UserStatus status) {
         this.name = name;
         this.age = age;
         this.cpf = cpf;
         this.email = email;
         this.password = password;
+        this.status = status;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getAge() {
         return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public UserStatus getStatus() {
+        return status;
     }
 }
